@@ -1,0 +1,52 @@
+<form action="" class="form-wrapper" [formGroup]="formCar">
+  <div class="car__nav mobile">
+    <span class="car__label"><strong>1</strong>/3 Расчет полиса</span>
+    <ul class="car__items mobile">
+      <li class="car__item mobile active"></li>
+      <li class="car__item mobile"></li>
+      <li class="car__item mobile"></li>
+    </ul>
+  </div>
+  <div class="car__nav desktop">
+    <ul class="car__items">
+      <li class="car__item active">
+        <a href="#" class="car__link">1. Расчет полиса</a>
+      </li>
+      <li class="car__item">
+        <a href="#" class="car__link">2. Контактные данные</a>
+      </li>
+      <li class="car__item">
+        <a href="#" class="car__link">3. Подтверждение</a>
+      </li>
+      <li class="car__item"><a href="#" class="car__link">4. Оплата</a></li>
+    </ul>
+  </div>
+  <app-section caption="Автомобиль">
+    <app-info formGroupName="info"></app-info>
+  </app-section>
+  <hr />
+  <app-section caption="Стоимость автомобиля">
+    <app-cost-car formGroupName="cost"></app-cost-car>
+  </app-section>
+  <hr />
+  <app-section caption="Стоимость и срок действия">
+    <app-calc formGroupName="calc"></app-calc>
+  </app-section>
+  <hr />
+  <footer class="footer">
+    <div class="footer__text">
+      <span>
+        Для оформления полиса заполните контактные данные, заявка будет
+        направлена менеджеру
+      </span>
+    </div>
+    <div class="btn-group">
+      <div class="btn">
+        <button>Вернуться</button>
+      </div>
+      <div class="btn main">
+        <button type="submit">Оформить</button>
+      </div>
+    </div>
+  </footer>
+</form>

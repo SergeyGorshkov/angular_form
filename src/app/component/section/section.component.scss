@@ -1,0 +1,18 @@
+@import "../../../scss/vars.scss";
+
+:host {
+  .label {
+    padding-top: rem(40px);
+    padding-bottom: rem(20px);
+    font-family: SBSansDisplay-Bold;
+    font-size: rem(20px);
+    line-height: rem(36px);
+    word-wrap: normal;
+    font-weight: 600;
+
+    @media (min-width: 321px) {
+      font-size: rem(28px);
+      line-height: rem(38px);
+    }
+  }
+}

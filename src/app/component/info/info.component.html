@@ -1,0 +1,22 @@
+<div class="info">
+  <div class="btn-group">
+    <div class="input-field">
+      <input type="text" placeholder="Регистрационный знак" />
+    </div>
+    <div class="btn">
+      <button (click)="setDefault()">Получить данные о ТС</button>
+    </div>
+  </div>
+  <div class="info-group">
+    <div class="info-items" [formGroup]="controlContainer.control">
+      <div *ngFor="let item of fields | keyvalue" class="info-item">
+        <div class="info-label">
+          <span>{{ item.value.label }}</span>
+        </div>
+        <div class="info-input">
+          <input type="text" [formControlName]="item.value.name" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

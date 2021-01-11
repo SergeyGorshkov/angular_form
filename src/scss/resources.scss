@@ -1,0 +1,20 @@
+@mixin arrow-down($size: 10px) {
+  content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.53033 0.46967C1.23744 0.176777 0.762563 0.176777 0.46967 0.46967C0.176777 0.762563 0.176777 1.23744 0.46967 1.53033L4.46967 5.53033C4.76256 5.82322 5.23744 5.82322 5.53033 5.53033L9.53033 1.53033C9.82322 1.23744 9.82322 0.762563 9.53033 0.46967C9.23744 0.176777 8.76256 0.176777 8.46967 0.46967L5 3.93934L1.53033 0.46967Z' fill='%23494E53'/%3E%3C/svg%3E%0A");
+  height: rem($size);
+  width: rem($size);
+}
+@mixin arrow-right($size: 10px) {
+  content: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.46967 8.46967C0.176777 8.76256 0.176777 9.23744 0.46967 9.53033C0.762563 9.82322 1.23744 9.82322 1.53033 9.53033L5.53033 5.53033C5.82322 5.23744 5.82322 4.76256 5.53033 4.46967L1.53033 0.46967C1.23744 0.176777 0.762563 0.176777 0.46967 0.46967C0.176777 0.762564 0.176777 1.23744 0.46967 1.53033L3.93934 5L0.46967 8.46967Z' fill='%23CED1D5'/%3E%3C/svg%3E%0A");
+  height: rem($size);
+  width: rem($size);
+}
+@mixin arrow-select($size: 10px) {
+  content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.53033 0.46967C1.23744 0.176777 0.762563 0.176777 0.46967 0.46967C0.176777 0.762563 0.176777 1.23744 0.46967 1.53033L4.46967 5.53033C4.76256 5.82322 5.23744 5.82322 5.53033 5.53033L9.53033 1.53033C9.82322 1.23744 9.82322 0.762563 9.53033 0.46967C9.23744 0.176777 8.76256 0.176777 8.46967 0.46967L5 3.93934L1.53033 0.46967Z' fill='%23000014'/%3E%3C/svg%3E%0A");
+  height: rem($size);
+  width: rem($size);
+}
+@mixin datepicker($size: 10px) {
+  content: url("data:image/svg+xml,%3Csvg width='33' height='32' viewBox='0 0 33 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='6.58252' y='6.75' width='20.5' height='20.5' rx='1.25' stroke='%232C3136' stroke-width='1.5'/%3E%3Cpath d='M6.58252 8C6.58252 7.30964 7.14216 6.75 7.83252 6.75L25.8325 6.75C26.5229 6.75 27.0825 7.30964 27.0825 8V11.25L6.58252 11.25L6.58252 8Z' stroke='%232C3136' stroke-width='1.5'/%3E%3Ccircle cx='22.8325' cy='16.5' r='1.5' fill='%232C3136'/%3E%3Ccircle cx='22.8325' cy='22.5' r='1.5' fill='%232C3136'/%3E%3Ccircle cx='16.8325' cy='16.5' r='1.5' fill='%232C3136'/%3E%3Ccircle cx='16.8325' cy='22.5' r='1.5' fill='%232C3136'/%3E%3Ccircle cx='10.8325' cy='16.5' r='1.5' fill='%232C3136'/%3E%3Ccircle cx='10.8325' cy='22.5' r='1.5' fill='%232C3136'/%3E%3Crect x='21.3325' y='4' width='3' height='5' rx='1.5' fill='%232C3136'/%3E%3Crect x='9.33252' y='4' width='3' height='5' rx='1.5' fill='%232C3136'/%3E%3C/svg%3E%0A");
+  height: rem($size);
+  width: rem($size);
+}

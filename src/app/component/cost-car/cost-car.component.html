@@ -1,0 +1,41 @@
+<div class="price" [formGroup]="controlContainer.control">
+  <div class="input-field">
+    <span class="money-placeholer">Текущая стоимость</span>
+    <input type="text" class="money" formControlName="currentCostInput" />
+    <div class="slider-wrapper">
+      <span class="prefix"></span>
+      <nouislider
+        [connect]="[true, false]"
+        [tooltips]="true"
+        [min]="80000"
+        [max]="200000"
+        [format]="format"
+        [formControl]="controlContainer.control.get('currentCost')"
+      ></nouislider>
+    </div>
+  </div>
+
+  <div class="input-field arrow">
+    <select [class.has-placeholder]="checkValue('city')" formControlName="city">
+      <option value="" disabled selected>Регион использования</option>
+      <option value="Москва">Москва</option>
+      <option value="Санкт-Петербург">Санкт-Петербург</option>
+    </select>
+    <span class="arrow"></span>
+  </div>
+  <div class="input-field arrow">
+    <select [class.has-placeholder]="checkValue('age')" formControlName="age">
+      <option value="" disabled selected>Минимальный возраст водителей</option>
+      <option value="30 лет">30 лет</option>
+    </select>
+  </div>
+  <div class="input-field arrow">
+    <select
+      [class.has-placeholder]="checkValue('experience')"
+      formControlName="experience"
+    >
+      <option value="" disabled selected>Мин. стаж водителей</option>
+      <option value="5 лет">5 лет</option>
+    </select>
+  </div>
+</div>

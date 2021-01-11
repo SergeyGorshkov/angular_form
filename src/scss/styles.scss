@@ -1,0 +1,426 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../scss/vars.scss";
+@import "../scss/resources.scss";
+@import "~nouislider/distribute/nouislider.min.css";
+@import "~js-datepicker/dist/datepicker.min.css";
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: ($root-font-size / 16px) * 100%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  min-width: rem($screen-xs);
+  overflow-x: hidden;
+  font-family: SBSansDisplay-Regular, "Arial", sans-serif;
+  font-weight: 400;
+  line-height: rem(20px);
+  margin: 0;
+}
+
+hr {
+  height: rem(1px);
+  border: none;
+  background-color: $break-bg-color;
+}
+
+.label {
+  padding-top: rem(40px);
+  padding-bottom: rem(20px);
+  font-family: SBSansDisplay-Bold;
+  font-size: rem(20px);
+  line-height: rem(36px);
+  word-wrap: normal;
+  font-weight: 600;
+
+  @media (min-width: 321px) {
+    font-size: rem(28px);
+    line-height: rem(38px);
+  }
+}
+
+.btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: rem(50px);
+  margin-bottom: rem(40px);
+
+  .btn:first-child,
+  .input-field {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    margin-bottom: rem(20px);
+  }
+
+  .btn {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+
+  @media (min-width: $screen-xs + 1) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    .btn:first-child,
+    .input-field {
+      margin-right: rem(20px);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn {
+  button {
+    border: rem(2px) solid $btn-color;
+    border-radius: rem(5px);
+    color: $btn-color;
+    background-color: $btn-alt-color;
+    padding: rem(14px) 0;
+    text-align: center;
+    font-family: SBSansDisplay-Regular;
+    font-size: rem(16px);
+    outline: none;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: $screen-xs + 1) {
+      padding: rem(15px) 0;
+    }
+  }
+  &.main {
+    button {
+      color: $btn-alt-color;
+      background-color: $btn-color;
+    }
+  }
+}
+
+.input-field {
+  position: relative;
+  font-family: SBSansDisplay-Regular;
+  font-size: rem(16px);
+  line-height: rem(26px);
+
+  @media (min-width: $screen-xs + 1) {
+    font-size: rem(21px);
+    line-height: rem(32px);
+  }
+
+  .datepicker {
+    cursor: pointer;
+  }
+
+  .datepicker-btn {
+    @include datepicker(32px);
+    position: absolute;
+    right: rem(14px);
+    top: calc(50% - 32px / 2);
+    pointer-events: none;
+  }
+
+  input,
+  select {
+    border: rem(2px) solid $input-b-color;
+    border-radius: rem(5px);
+    padding: rem(12px) rem(20px);
+    background-color: $input-bg-color;
+    outline: none;
+    width: 100%;
+
+    font-family: SBSansDisplay-Regular;
+    font-size: rem(16px);
+    line-height: rem(26px);
+
+    @media (min-width: $screen-xs + 1) {
+      font-size: rem(21px);
+      line-height: rem(32px);
+    }
+
+    &::-webkit-input-placeholder {
+      color: $input-color;
+    }
+
+    &::-moz-placeholder {
+      color: $input-color;
+    }
+
+    &:-ms-input-placeholder {
+      color: $input-color;
+    }
+
+    &::-ms-input-placeholder {
+      color: $input-color;
+    }
+
+    &::placeholder {
+      color: $input-color;
+    }
+
+    &.money {
+      text-align: right;
+    }
+  }
+
+  .money-placeholer {
+    position: absolute;
+    top: rem(12px);
+    left: rem(20px);
+    pointer-events: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &.has-placeholder {
+      color: $label-color;
+    }
+  }
+
+  &.arrow::after {
+    @include arrow-select(10px);
+    position: absolute;
+    top: rem(6px);
+    right: rem(20px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .slider-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    top: rem(-4px);
+    height: rem(4px);
+
+    .prefix {
+      display: block;
+      -ms-flex-preferred-size: rem(20px);
+      flex-basis: rem(20px);
+      background: $range-bg-active-color;
+      border-radius: 0 0 0 rem(4px);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: rem(-2px);
+        left: rem(14px);
+        background: #ffffff;
+        border: rem(2px) solid $range-bg-active-color;
+        border-radius: 50%;
+        width: rem(8px);
+        height: rem(8px);
+        z-index: 1;
+      }
+
+      @media (max-width: $screen-xs) {
+        display: none;
+      }
+    }
+
+    nouislider {
+      width: 100%;
+      margin: 0;
+
+      .noUi-target {
+        background: $range-bg-color;
+        border-radius: 0 0 rem(4px) 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        @media (min-width: $screen-xs) {
+          border-radius: 0 0 rem(4px) rem(4px);
+        }
+      }
+
+      .noUi-horizontal {
+        height: rem(4px);
+
+        .noUi-handle {
+          width: rem(14px);
+          height: rem(14px);
+          border-radius: 50%;
+          top: rem(-6px);
+          right: rem(-6px);
+          border: rem(4px) solid #ffffff;
+          background: $range-bg-active-color;
+          -webkit-box-shadow: 0 -4px 8px 0px $range-tooltip-color;
+          box-shadow: 0 -4px 8px 0px $range-tooltip-color;
+          cursor: pointer;
+
+          &::before {
+            display: none;
+          }
+          &::after {
+            display: none;
+          }
+        }
+
+        .noUi-connects {
+          border-radius: 0 0 rem(4px) 0;
+          overflow: inherit;
+          .noUi-connect {
+            background: $range-bg-active-color;
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              top: rem(-1px);
+              left: 0;
+              right: 0;
+              background: $range-bg-active-color;
+              width: 100%;
+              height: rem(4px);
+              z-index: 1;
+              @media (max-width: $screen-xs) {
+                border-radius: 0 0 0 rem(4px);
+              }
+            }
+          }
+        }
+
+        .noUi-tooltip {
+          border: none;
+          bottom: -440%;
+          background: transparent;
+          color: $range-tooltip-color;
+          font-family: SBSansDisplay-Regular;
+          font-size: rem(14px);
+          line-height: rem(20px);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &__text {
+    font-family: SBSansDisplay-Regular;
+    font-size: rem(14px);
+    line-height: rem(20px);
+    margin-right: rem(40px);
+    margin-bottom: rem(30px);
+  }
+}
+
+.car__nav {
+  text-align: center;
+  color: $car-nav-label;
+  min-height: rem(60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+
+  .car__items {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: inherit;
+    &.mobile {
+      min-height: 0;
+    }
+  }
+  .car__item {
+    margin-right: rem(5px);
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    border-bottom: rem(3px) solid $inactive-bg-color;
+    min-height: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    &.mobile {
+      -ms-flex-preferred-size: 33.33%;
+      flex-basis: 33.33%;
+      margin-right: 0;
+      min-height: 0;
+      cursor: auto;
+    }
+    &.active {
+      border-bottom: rem(3px) solid $active-bg-color;
+    }
+  }
+  .car__item:last-child {
+    margin-right: 0;
+  }
+  .car__link {
+    text-decoration: none;
+    font-size: rem(21px);
+    color: $header-head-color;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  &.mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  &.desktop {
+    display: none;
+  }
+
+  @media (min-width: $screen-xl) {
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+}
+
+.car__label {
+  display: block;
+  margin-bottom: rem(13px);
+  font-family: SBSansUI-Regular;
+  font-size: rem(14px);
+
+  @media (min-width: $screen-md) {
+    font-size: rem(17px);
+  }
+}

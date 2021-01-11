@@ -1,0 +1,26 @@
+<ng-container [formGroup]="controlContainer.control">
+  <div class="result input-field">
+    <span class="datepicker-btn"></span>
+    <input type="text" class="datepicker" placeholder="Дата начала" />
+  </div>
+  <div class="result__items">
+    <div class="result__row">
+      <div class="result__label"><span>Дата окончания</span></div>
+      <div class="result__data">
+        <span>{{ getValue("dateEnd") }}</span>
+      </div>
+    </div>
+    <div class="result__row">
+      <div class="result__label"><span>Стоимость полиса</span></div>
+      <div class="result__data main">
+        <span>{{ getValue("amount") }}</span>
+      </div>
+    </div>
+    <div class="result__row">
+      <div class="result__label"><span>Франшиза</span></div>
+      <div class="result__data">
+        <span>{{ getValue("franchise") }}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>

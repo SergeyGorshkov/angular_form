@@ -1,0 +1,33 @@
+$root-font-size: 16px;
+
+@function rem($size) {
+  @return $size / $root-font-size * 1rem;
+}
+
+/* #region screen */
+$screen-xs: 320px;
+$screen-md: 768px;
+$screen-xl: 1368px;
+/* #endregion screen */
+
+/* #region color */
+$header-bg-color: #f0f3f6;
+$header-breadcrumb-color: #878b90;
+$header-head-color: #2c3136;
+$header-nav-color: #494e53;
+$header-nav-bg-color: #fff;
+$car-nav-label: #353850;
+$break-bg-color: #d8d8d8;
+$inactive-bg-color: #d9dce0;
+$active-bg-color: #44c77f;
+$btn-color: #000014;
+$btn-alt-color: #fff;
+$input-b-color: #ced1d5;
+$input-bg-color: #fff;
+$label-color: #878b90;
+$input-color: #2c3136;
+$range-bg-color: #d8d8d8;
+$range-bg-active-color: #08a652;
+$range-tooltip-color: #878b90;
+$dp-color: #000014;
+/* #endregion color */

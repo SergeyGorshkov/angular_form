@@ -1,0 +1,46 @@
+@import "../../../scss/vars.scss";
+
+.result {
+  &.input-field {
+    margin-bottom: rem(40px);
+    @media (min-width: $screen-xl) {
+      margin-right: 66.66%;
+    }
+  }
+  &__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-family: SBSansDisplay-Regular;
+    font-weight: 400;
+    font-size: rem(14px);
+    margin-bottom: rem(18px);
+
+    @media (min-width: $screen-xs + 1) {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      font-size: rem(17px);
+    }
+  }
+  &__label {
+    color: $label-color;
+    @media (min-width: $screen-xs + 1) {
+      width: rem(240px);
+    }
+  }
+  &__data {
+    color: $input-color;
+
+    &.main {
+      font-size: rem(17px);
+      font-weight: 600;
+      @media (min-width: 321px) {
+        font-size: rem(36px);
+      }
+    }
+  }
+}

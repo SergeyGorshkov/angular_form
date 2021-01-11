@@ -1,0 +1,45 @@
+@import "../../../scss/vars.scss";
+@import "../../../scss/resources.scss";
+
+:host {
+  background-color: $header-bg-color;
+
+  min-height: rem(123px);
+  padding: rem(21px) rem(40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    min-height: rem(145px);
+  }
+  @media (min-width: 1368px) {
+    min-height: rem(170px);
+  }
+
+  .caption {
+    color: $header-head-color;
+    font-family: SBSansDisplay-SemiBold;
+    font-weight: 600;
+    font-size: rem(46px);
+    margin-top: rem(15px);
+  }
+
+  .breadcrumb {
+    text-decoration: none;
+    color: $header-breadcrumb-color;
+    font-size: rem(12px);
+
+    &:first-child::after {
+      @include arrow-right(12px);
+      margin: 0 rem(5px);
+    }
+  }
+}

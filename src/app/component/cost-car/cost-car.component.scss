@@ -1,0 +1,11 @@
+@import "../../../scss/vars.scss";
+
+.price {
+  .input-field {
+    margin-bottom: rem(40px);
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-right: 50%;
+  }
+}
